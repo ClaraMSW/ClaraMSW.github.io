@@ -1,75 +1,422 @@
 :root{
-    --bg-color: rgb(20,20,20);
-    --color: rgb(240,240,240);
+  --bg-color: rgb(0, 0, 0);
+  --color: rgb(240,240,240);
+  --card-color: rgb(23,23,23);
 }
+
+/* Fonts ----------------------------------------------------------------------------------------------*/ 
+
+
 body{
-    background-color: black;
-    background-attachment: scroll;
-    background-image: url(img/Differenzmenge\ 1.png);
-    background-position: center top;
-    background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--color);
+  font-family: Cinzel Decorative, serif;
+  background-image: url(assets/Differenzmenge\ 1\ -\ Kopie.png);
+  background-size: 100%;
+  background-attachment: scroll;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
-/* Navigation */
-
+.body-class{
+  background-image: url(assets/Gruppe\ 5.png);
+}
+/* Navigation ----------------------------------------------------------------------------------------------*/ 
 nav{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 70px;
-    z-index: 2;
-    overflow: hidden;
-    background-color: #0800FF;
-    align-items: center;
-    display: inline-block;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 0px;
+  z-index: 20;
+  overflow: hidden;
+  background-color: #0800FF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  margin-right: 60px;
+  padding: 0;
+}
+
+li {
+  float: left;
 }
 
 li a {
-    position:fixed;
-    text-align: right;
-    margin: 15px;
-    padding: 15px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  transition: color .3s , text-shadow .3s;
 }
 
-/* Fonts */
+li a:hover:not(.active) {
+  color: #ffe66b;
+  text-shadow: 0 0 5px #ffe048;
+}
+  
+.active {
+  color: #ffdf6b;
+  text-shadow: 0 0 5px #ffda48;
+}
 
-h1 {
-    font-size: 4em;
-    font-family: Cinzel Decorative, serif;
+a{
+  color: var(--color);
+  text-decoration: none;
+}
+
+ul.b {
+  list-style-type: circle;
+  list-style-position:outside;
+}
+
+li.b{
+  float: none;
 }
 
 
-h1,h2{
-    color: rgb(255, 255, 255);
+
+
+
+/* Main ----------------------------------------------------------------------------------------------*/ 
+main{
+  display: grid;
+}
+
+h1, h2{
+  padding: 0;
+  margin: 0;
+  font-family: Cinzel Decorative, serif;
+}
+
+h1{
+  font-weight: 700;
+  font-size: 4em;
+  color: rgb(255, 255, 255);
+}
+
+h2{
+  font-weight: 400;
 }
 
 p{
-    color: rgb(255, 255, 255);
-    
+  font-family: sans-serif;
+  line-height: 150%;
 }
 
 
 
-/* content */
+.about-img{
+  position: absolute;
+  width:100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  margin: 100px 0px 0px 0px;
+}
+
+
+.rund {
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+}
+
+
+.long-txt{
+  display: grid;
+}
 
 .intro{
-    padding: 150px 20px 50px 50px;
-  }
-
-.header{
-    margin: 350px 300px 0 150px;
-  }
-
-.img{
-    align-items: center;
+  padding: 100px 20px 0px 50px;
+  width: 800px;
 }
 
-.grid-container{
-    display: grid;
-    gap: 5%;
-    grid-template-columns: auto;
+.intro02{
+  padding: 0px 20px 50px 50px;
+  width: 500px;
 }
 
-.item{
-    width: 50%;
+.intro03{
+  padding: 50px 20px 0px 600px;
+  width: 800px;
+}
+.test{
+  margin-bottom: 150px;
+}
+
+.color{
+  color:#ec8f02 ;
+}
+/* Cards ----------------------------------------------------------------------------------------------*/ 
+.project-wrapper {
+  display: flex;
+  align-items: center ;
+  justify-content: left;
+}
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center ;
+  justify-content: center;
+}
+
+.card{
+  background-color: rgba(255, 255, 255, 0.1);
+  position: relative;
+  border-radius: 10px;
+}
+
+.card:hover::before,
+.card:hover > .card-border  {
+  opacity: 0.5;
+}
+
+.card::before,
+.card > .card-border {
+  border-radius: inherit;
+  content: "";
+
+  height: 100%;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: opacity 500ms;
+  width: 100%;
+}
+
+  
+.card > .card-content{
+  position: relative;
+  background-color: var(--card-color);
+  border-radius: inherit;
+  margin:1px;
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+  z-index: 2;
+}
+
+.card-content{
+  overflow: hidden;
+}
+
+.card-img{
+  width: 100%;
+  height: 50%;
+  opacity: 40%;
+}
+
+.card-txt{
+  margin: 0 10px;
+}
+
+.card-title{
+  margin-top: 10px;
+}
+
+/* Footer ----------------------------------------------------------------------------------------------*/
+footer {
+  width: 100%;
+  z-index: 19;
+  overflow: hidden;
+  background-color: var(--bg-color);
+  filter: drop-shadow(0px -6px 30px rgba(8, 0, 255, 1));
+  margin-top: 150px;
+}
+  
+.footer-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between ;
+}
+  
+/* Breakpoints ----------------------------------------------------------------------------------------------*/
+
+/* BRP1 -Smartphones/Tablets --------------------------------------------------------------------------------*/
+/* (Unter 992px) */
+  
+@media screen and (max-width: 991px ) {
+  body{
+    font-size: 12px;
+  }
+
+  /* Navigation */
+  nav{
+    padding: 15px 0;
+  }
+
+  .logo{
+    margin-left: 4vw;
+  }
+
+  li a{
+    padding: 0px 0px 0px 20px;
+  }
+
+  input[type="checkbox"]:after{
+    font-size: 12px;
+  }
+
+  .contact{
+    margin-right: 4vw;
+  }
+
+  /* Main */
+  main{
+    margin: 60px 4vw 5vh 4vw;
+  }
+
+  section{
+    margin: 2vh 0;
+  }
+
+  h1{
+    font-size: 64px;
+  }
+
+  h2{
+    font-size: 32px;
+  }
+
+  .header{
+    margin: 8vh 0 0 4px;
+  }
+
+  .about-img{
+    width: clamp(300px, 15vw, 500px);
+    height: clamp(420px, 45vh, 700px);
+    margin: 5vh auto 0 auto;
+  }
+
+  
+
+  /* Cards */
+  .cards{
+    gap: 3vh;
+  }
+
+  .card{
+    height: clamp(240px, 40vh, 400px);
+  }
+
+  .card-title{
+    font-size: 24px;
+  }
+
+    /* Footer */
+    footer{
+      padding: 10px 0;
+    }
+  
+    .footer-container{
+      margin: 0 4vw;
+    }
+}
+
+/* BRP2 -Desktop --------------------------------------------------------------------------------------------*/
+/* (Über 992px) */
+
+@media screen and (min-width: 992px) {
+  body{
+    font-size: 14px;
+  }
+
+  /* Navigation */
+  nav{
+    padding: 30px 0;
+  }
+
+  .logo{
+    margin-left: 3vw;
+  }
+
+  li a{
+    padding: 0px 0px 0px 40px;
+  }
+
+  input[type="checkbox"]:after{
+    font-size: 14px;
+  }
+
+  .contact{
+    margin-right: 3vw;
+  }
+
+  /* Main */
+  main{
+    margin: 80px 3vw 5vh 3vw;
+  }
+
+  section{
+    margin: 5vh 0;
+  }
+
+  h1{
+    font-size: 4em;
+  }
+
+  h2{
+    font-size: 40px;
+  }
+
+  .header{
+    margin: 4vh 50vw 0 80px;
+  }
+
+ 
+
+  .about{
+    display: flex;
+    align-items: top;
+  }
+
+  
+  .about-img{
+  position: absolute;
+  width:auto;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  margin: 150px 0px 0px 0px;
+  }
+
+
+  .long-txt{
+    margin: 0 10vw 0 80px;
+    gap: 3vw;
+    grid-template-columns: 1fr 1fr;
+  }
+    
+  /* Cards */
+  .cards{
+    gap: 2vw;
+    max-width: 80vw;
+    width: calc(100% - 20px);
+  }
+
+  .card{
+    height: clamp(240px, 36vh, 400px);
+    width: clamp(200px, 25vw, 400px);
+  }
+
+  .card-title{
+    font-size: 24px;
+  }
+
+  /* Footer */
+  footer{
+    padding: 20px 0;
+  }
+
+  .footer-container{
+    margin: 0 3vw;
+  }
 }

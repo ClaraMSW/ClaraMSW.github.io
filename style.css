@@ -70,17 +70,15 @@ a{
   text-decoration: none;
 }
 
-ul.b {
+
+.ul{
   list-style-type: circle;
   list-style-position:outside;
 }
 
-li.b{
+.li{
   float: none;
 }
-
-
-
 
 
 /* Main ----------------------------------------------------------------------------------------------*/ 
@@ -414,6 +412,7 @@ footer {
   /* Footer */
   footer{
     padding: 20px 0;
+    filter: drop-shadow(0px -6px 30px rgba(8, 0, 255, 1));
   }
 
   .footer-container{
